@@ -61,11 +61,11 @@ The project emphasizes not only visual quality, but also structure, performance,
 
 ## 📁 Project Structure
 
+```bash
 src/
 ├── components/
-  ├── common/
-│ ├── sections/
-│ └── ui/
+│   ├── sections/
+│   └── ui/
 ├── hooks/
 ├── data/
 ├── layouts/
