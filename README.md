@@ -1,73 +1,127 @@
-# React + TypeScript + Vite
+# 🚀 Olena Korenieva — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend-focused developer building modern, responsive web applications with strong attention to UI, architecture, and real-world usability.
 
-Currently, two official plugins are available:
+👉 **Live:**  
+https://ElenaKorenieva.github.io/portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This portfolio highlights selected work and technical capabilities, with a focus on:
 
-## Expanding the ESLint configuration
+- Building scalable and maintainable frontend architecture
+- Creating interactive, polished user interfaces
+- Delivering production-ready applications
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The project emphasizes not only visual quality, but also structure, performance, and real-world usability.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🧠 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Core
+- React 19  
+- TypeScript  
+- Vite  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Styling
+- Tailwind CSS v4  
+- Tailwind Vite Plugin  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Animations & Interaction
+- GSAP (ScrollTrigger, advanced UI animations)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Routing
+- React Router DOM  
+
+### UI & Icons
+- Lucide React  
+
+### Tooling
+- ESLint (modern configuration)  
+- TypeScript ESLint  
+
+### Deployment
+- GitHub Pages  
+- gh-pages  
+
+---
+
+## 🎨 Features
+
+- Smooth GSAP-powered animations
+- Interactive cursor trail effects
+- Fully responsive design
+- Clean and modular component architecture
+- Modern UI with attention to micro-interactions
+
+---
+
+## 📁 Project Structure
+
+src/
+├── components/
+  ├── common/
+│ ├── sections/
+│ └── ui/
+├── hooks/
+├── data/
+├── layouts/
+└── pages/
+
+---
+
+## ⚙️ Local Development
+
+npm install
+npm run dev
+
+---
+
+## 🏗 Build
+
+npm run build
+
+---
+
+## 🚀 Deployment
+
+This project is deployed using GitHub Pages.
+
+npm run deploy
+
+
+### Configuration details:
+- Vite `base: /portfolio/`
+- React Router `basename="/portfolio"`
+- Deployment via `gh-pages` branch
+
+---
+
+## 📬 Contact
+
+- Email: olena.korenieva@gmail.com  
+- GitHub: https://github.com/ElenaKorenieva  
+- LinkedIn: https://www.linkedin.com/in/olena-korenieva-555391109/
+
+---
+
+## 💡 Notes
+
+This project focuses on real-world frontend development, including:
+
+- Animation performance and smoothness  
+- Maintainable component structure  
+- Clean separation of logic and UI  
+- Responsive behavior across devices  
+
+---
+
+## 🧩 Future Improvements
+
+- Add detailed project case studies  
+- Improve accessibility (a11y)  
+- Add dark mode  
+- Performance optimization (Lighthouse improvements)  
