@@ -70,7 +70,7 @@ src/
 ├── data/
 ├── layouts/
 └── pages/
-
+```
 ---
 
 ## ⚙️ Local Development
