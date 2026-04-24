@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light;
+  color: black;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  background: white;
+}
+
+body {
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.gradient-layer {
+  background: linear-gradient(
+    120deg,
+    rgba(59, 130, 246, 0.25),
+    rgba(34, 211, 238, 0.25),
+    rgba(168, 85, 247, 0.25)
+  );
+  filter: blur(18px);
+  transform: translateX(0%);
+  pointer-events: none;
+}
+
+.detail-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.detail-section-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(34, 211, 238, 0.1),
+    rgba(168, 85, 247, 0.1)
+  );
+  background-size: 200% 200%;
+  will-change: opacity, transform, background-position;
+}
+
+.tech-chip {
+  will-change: transform;
+}
