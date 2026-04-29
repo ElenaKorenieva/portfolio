@@ -31,12 +31,14 @@ export function useHeroIntroAnimation({
       const title = titleRef.current;
       const text = textRef.current;
       const cards = section.querySelectorAll<HTMLElement>(".hero-card-wrap");
+      const particles =
+        section.querySelectorAll<HTMLElement>(".magnet-particle");
 
       const blobs = [
         blob1Ref.current,
         blob2Ref.current,
         blob3Ref.current,
-      ].filter(Boolean);
+      ].filter((blob): blob is HTMLDivElement => Boolean(blob));
 
       gsap.set([badge, title, text], {
         autoAlpha: 0,
@@ -57,6 +59,13 @@ export function useHeroIntroAnimation({
         y: 10,
       });
 
+      gsap.set(particles, {
+        x: () => gsap.utils.random(-180, 180),
+        y: () => gsap.utils.random(-180, 180),
+        scale: () => gsap.utils.random(0.4, 1.1),
+        autoAlpha: 0,
+      });
+
       const tl = gsap.timeline();
 
       tl.to(blobs, {
@@ -68,6 +77,22 @@ export function useHeroIntroAnimation({
         stagger: 0.08,
       })
         .to(
+          particles,
+          {
+            x: () => gsap.utils.random(-120, 120),
+            y: () => gsap.utils.random(-120, 120),
+            autoAlpha: () => gsap.utils.random(0.25, 0.75),
+            scale: () => gsap.utils.random(0.5, 1),
+            duration: 1,
+            ease: "power3.out",
+            stagger: {
+              amount: 0.5,
+              from: "center",
+            },
+          },
+          "-=0.3"
+        )
+        .to(
           badge,
           {
             autoAlpha: 1,
@@ -76,7 +101,7 @@ export function useHeroIntroAnimation({
             duration: 0.45,
             ease: "power3.out",
           },
-          "-=0.2"
+          "-=0.65"
         )
         .to(
           title,
@@ -113,32 +138,53 @@ export function useHeroIntroAnimation({
           "-=0.45"
         );
 
-      gsap.to(blob1Ref.current, {
-        x: 40,
-        y: -20,
-        duration: 7,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+      if (particles.length > 0) {
+        gsap.to(particles, {
+          x: "+=18",
+          y: "-=12",
+          duration: 3,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          stagger: {
+            amount: 1.2,
+            from: "random",
+          },
+        });
+      }
 
-      gsap.to(blob2Ref.current, {
-        x: -30,
-        y: 30,
-        duration: 9,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+      if (blob1Ref.current) {
+        gsap.to(blob1Ref.current, {
+          x: 40,
+          y: -20,
+          duration: 7,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      }
 
-      gsap.to(blob3Ref.current, {
-        x: 20,
-        y: 25,
-        duration: 8,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+      if (blob2Ref.current) {
+        gsap.to(blob2Ref.current, {
+          x: -30,
+          y: 30,
+          duration: 9,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      }
+
+      if (blob3Ref.current) {
+        gsap.to(blob3Ref.current, {
+          x: 20,
+          y: 25,
+          duration: 8,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      }
     }, sectionRef);
 
     return () => ctx.revert();
